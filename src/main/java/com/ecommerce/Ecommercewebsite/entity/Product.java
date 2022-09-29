@@ -24,7 +24,16 @@ public class Product {
             }
     )
     private Set<ImageModel> productImages;
-
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable(name ="user_product",
+             joinColumns = {
+            @JoinColumn(name = "user_product_id")
+    },
+       inverseJoinColumns = {
+            @JoinColumn(name = "user_id")
+       }
+    )
+    private Set<User> user;
     public Integer getProductId() {
         return productId;
     }

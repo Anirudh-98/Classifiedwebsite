@@ -1,6 +1,7 @@
 package com.ecommerce.Ecommercewebsite.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -21,6 +22,9 @@ public class User {
             }
     )
     private Set<Role> role;
+
+
+
 
     public String getUserName() {
         return userName;
