@@ -1,13 +1,15 @@
 package com.ecommerce.Ecommercewebsite.entity;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
 public class User {
 
     @Id
+    @Column(unique = true)
     private String userName;
     private String userFirstName;
     private String userLastName;
@@ -23,8 +25,20 @@ public class User {
     )
     private Set<Role> role;
 
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinTable( name ="user_product",
+            joinColumns = {
+                    @JoinColumn(name = "user_product_id")
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(name = "user_id")
+            }
+    )
+    private Set<Product> UserProduct = new HashSet<>();
 
-
+    public Set<Product> getUserProduct() {
+        return UserProduct;
+    }
 
     public String getUserName() {
         return userName;
@@ -64,5 +78,9 @@ public class User {
 
     public void setRole(Set<Role> role) {
         this.role = role;
+    }
+
+    public void productUser(Product product) {
+        UserProduct.add(product);
     }
 }

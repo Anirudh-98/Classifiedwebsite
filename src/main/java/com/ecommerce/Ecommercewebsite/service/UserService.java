@@ -9,6 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -64,6 +66,12 @@ public class UserService {
         user.setUserPassword(getEncodedPassword(user.getUserPassword()));
 
         return userDao.save(user);
+    }
+    public List<User> getAllUsers(){
+        return (List<User>) userDao.findAll();
+    }
+    public User getUserById(String userName){
+        return userDao.findById(userName).get();
     }
 
     public String getEncodedPassword(String password) {

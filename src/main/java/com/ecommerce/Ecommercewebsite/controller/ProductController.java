@@ -1,7 +1,10 @@
 package com.ecommerce.Ecommercewebsite.controller;
 
+import com.ecommerce.Ecommercewebsite.dao.ProductRepository;
+import com.ecommerce.Ecommercewebsite.dao.UserDao;
 import com.ecommerce.Ecommercewebsite.entity.ImageModel;
 import com.ecommerce.Ecommercewebsite.entity.Product;
+import com.ecommerce.Ecommercewebsite.entity.User;
 import com.ecommerce.Ecommercewebsite.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,10 +23,14 @@ import java.util.Set;
 public class ProductController {
     @Autowired
     private ProductService productService;
-
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private UserDao userDao;
     @PostMapping(value = {"/addNewProduct"},consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public Product addNewProduct(@RequestPart("product") Product product,
-                                 @RequestPart("imageFile")MultipartFile[]file){
+                                 @RequestPart("imageFile")MultipartFile[]file
+                                 ){
 //       return productService.addNewProduct(product);
         try{
            Set<ImageModel> images = uploadImage(file);
@@ -63,5 +70,7 @@ public class ProductController {
     public Product getProductDetailsById(@PathVariable("productId") Integer productId) {
       return productService.getProductDetailsById(productId);
     }
+
+
 }
 
