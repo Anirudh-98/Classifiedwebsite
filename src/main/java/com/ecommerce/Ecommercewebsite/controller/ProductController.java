@@ -4,7 +4,6 @@ import com.ecommerce.Ecommercewebsite.dao.ProductRepository;
 import com.ecommerce.Ecommercewebsite.dao.UserDao;
 import com.ecommerce.Ecommercewebsite.entity.ImageModel;
 import com.ecommerce.Ecommercewebsite.entity.Product;
-import com.ecommerce.Ecommercewebsite.entity.User;
 import com.ecommerce.Ecommercewebsite.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -70,7 +69,6 @@ public class ProductController {
     public Product getProductDetailsById(@PathVariable("productId") Integer productId) {
       return productService.getProductDetailsById(productId);
     }
-
 
 }
 

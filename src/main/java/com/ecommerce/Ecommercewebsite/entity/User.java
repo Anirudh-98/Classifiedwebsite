@@ -1,8 +1,9 @@
 package com.ecommerce.Ecommercewebsite.entity;
 
+import com.sun.istack.NotNull;
+
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -10,9 +11,13 @@ public class User {
 
     @Id
     @Column(unique = true)
+    @NotNull
     private String userName;
+    @NotNull
     private String userFirstName;
+    @NotNull
     private String userLastName;
+    @NotNull
     private String userPassword;
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "USER_ROLE",
@@ -36,9 +41,7 @@ public class User {
     )
     private Set<Product> UserProduct = new HashSet<>();
 
-    public Set<Product> getUserProduct() {
-        return UserProduct;
-    }
+
 
     public String getUserName() {
         return userName;
@@ -78,6 +81,11 @@ public class User {
 
     public void setRole(Set<Role> role) {
         this.role = role;
+    }
+
+
+    public Set<Product> getUserProduct() {
+        return UserProduct;
     }
 
     public void productUser(Product product) {

@@ -16,7 +16,7 @@ public class JwtUtil {
 
     private static final String SECRET_KEY = "web_application";
 
-    private static final int TOKEN_VALIDITY = 3600 * 5;
+    private static final int TOKEN_VALIDITY = 864000000;// 10 days
 
     public String getUsernameFromToken(String token) {
         return getClaimFromToken(token, Claims::getSubject);

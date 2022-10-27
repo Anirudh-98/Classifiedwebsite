@@ -1,22 +1,35 @@
 package com.ecommerce.Ecommercewebsite.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.util.HashSet;
+
 import java.util.Set;
 
 @Entity
-public class Product {
+public class Product  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer productId;
+    @NotNull
     private String productName;
+    @NotNull
     private String productDescription;
+    @NotNull
     private String productModel;
+    @NotNull
     private Double productPrice;
+    @NotNull
     private String location;
+    @NotNull
+    private String tag;
+
+    private @NotNull String userName;
+
+    private @NotNull String contactNumber;
 
 
     @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -28,12 +41,11 @@ public class Product {
              @JoinColumn(name = "image_id")
             }
     )
+    @NotNull
     private Set<ImageModel> productImages;
-   @ManyToMany(mappedBy = "UserProduct" )
+   @ManyToMany(mappedBy = "UserProduct")
    @JsonIgnore
     private Set<User>  users = new HashSet<>();
-
-
 
     public Integer getProductId() {
         return productId;
@@ -90,8 +102,31 @@ public class Product {
     public void setProductImages(Set<ImageModel> productImages) {
         this.productImages = productImages;
     }
-    public Set<User> getUsers(User user) {
+
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+    public Set<User> getUsers() {
         return users;
     }
 
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
 }
