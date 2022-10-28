@@ -47,6 +47,8 @@ public class Product  {
    @JsonIgnore
     private Set<User>  users = new HashSet<>();
 
+
+
     public Integer getProductId() {
         return productId;
     }

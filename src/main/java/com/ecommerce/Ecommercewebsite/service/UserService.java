@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
 import java.util.List;
-import java.util.Optional;
 import java.util.Set;
 
 @Service
@@ -73,6 +72,8 @@ public class UserService {
     public User getUserById(String userName){
         return userDao.findById(userName).get();
     }
+
+
 
     public String getEncodedPassword(String password) {
         return passwordEncoder.encode(password);
