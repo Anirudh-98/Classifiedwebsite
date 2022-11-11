@@ -1,5 +1,5 @@
-<div class="container card bg-light  " style="margin-top: 83px;">
-  <div class="row  mt-5">
+<div class="container card bg-light  " style="margin-top: 83px;margin-bottom: 40px;">
+  <div class="row  mt-3">
   <div class=" p-2 col-6 ">
   <h3 class="text-center mt-2"><b>product</b></h3>
   <hr scale="5" noshade>
@@ -20,9 +20,26 @@
       [(ngModel)] ="product.productDescription" name="productDescription">
     </div>
     <div class="form-group mb-3">
+     <label for="select">Choose a Option:</label>
+      <select  [(ngModel)] ="product.tag" class="form-control" name="tag" id="tag">
+       <option value="Mobile">Mobile</option>
+       <option value="Laptops & Tablets">Laptops & Tablets</option>
+       <option value="Car">Car</option>
+       <option value="furniture">furniture</option>
+       <option value="House"> House & Apartments</option>
+       <option value="Bike">Bike</option>
+      </select>
+    </div>
+    <div class="form-group mb-3">
       <label class="ms-2">Price:</label>
       <input type="number" class="form-control" id="productPrice"
       [(ngModel)] ="product.productPrice" name="productPrice">
+    </div>
+
+    <div class="form-group mb-3">
+      <label class="ms-2">ContactNumber:</label>
+      <input type="number" class="form-control" id="number"
+      [(ngModel)] ="product.contactNumber" name="contactNumber">
     </div>
 
     <div class="form-group mb-2">

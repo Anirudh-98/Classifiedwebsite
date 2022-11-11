@@ -5,8 +5,12 @@ export class Product{
   productName!: string;
   productModel!: string;
   productDescription!: string;
+  tag! : string;
   productPrice!: number;
   location!: string;
   productImages!: FileHandle[];
+  userName!: string;
+  contactNumber!: string;
+
 
 }

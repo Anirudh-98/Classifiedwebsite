@@ -16,8 +16,8 @@
     <div class="card ms-1 p-3 mb-3 col-md">
      <h2 class="text-center"><b>Seller Description</b></h2>
      <hr>
-      <h3>Name: Anirudh.</h3>
-      <h4>Contact No:<span *ngIf="isLoggedIn()">000000000</span></h4>
+      <h3>Name: {{product.userName}}</h3>
+      <h4>Contact No: {{product.contactNumber}}</h4>
      <h3>Price: Rs.{{product.productPrice}}. </h3>
      <h4>ProductName: {{product.productName}}.</h4>
      <p class="card-text">ProductModel: {{product.productModel}}.</p>

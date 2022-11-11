@@ -14,13 +14,17 @@ import { UserService } from '../_services/user.service';
 })
 export class AddProductComponent implements OnInit {
    product: Product = {
-    productName: "",
-    productDescription: "",
-    productPrice: 0,
-    productModel: "",
-    location: "",
-    productId: '',
-    productImages: []
+     productName: "",
+     productDescription: "",
+     productPrice: 0,
+     productModel: "",
+     location: "",
+     productId: '',
+     productImages: [],
+     tag: "",
+     userName: "",
+     contactNumber: " "
+
    }
   constructor(private productService: ProductService,
     private router: Router, private sanitizer: DomSanitizer,

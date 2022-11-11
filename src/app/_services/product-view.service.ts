@@ -35,7 +35,9 @@ export class ProductViewService implements Resolve<Product> {
     location: "",
     productId: '',
     productImages: [],
-
+    tag: "",
+    userName: "",
+    contactNumber: ""
     }
   }
 }

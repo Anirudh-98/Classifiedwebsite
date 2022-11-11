@@ -13,7 +13,7 @@
             <p class="card-text">Price: <span class=" text-danger"> Rs.{{item.productPrice}}</span></p>
             <p class="card-text">Description:{{item.productDescription}}</p>
             <p class="card-text">Location:{{item.location}}</p>
-            <button mat-icon-button color="primary" (click)="viewProduct(item.productId)">View more..</button>
+            <button  mat-icon-button color="primary" (click)="viewProduct(item.productId)">View more..</button>
         </div>
           </div>
          </div>
@@ -46,7 +46,7 @@
   </button>
 </div>
 <!--Search Bar-->
-<div class="container mt-3">
+<div class="container mt-3" style="margin-bottom: 4rem!important;">
   <div>
      <input id="search" class="form-control text-center mt-2 fixed-top" type="text" name="search" autocomplete="off" [(ngModel)]="searchText"
     placeholder="Find Cars,Mobile Phones and more.." style="width: 368px;

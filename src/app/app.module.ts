@@ -31,6 +31,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { CreateuserComponent } from './createuser/createuser.component';
 import { ProductComponent } from './product/product.component';
 import { FooterComponent } from './footer/footer.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { FooterComponent } from './footer/footer.component';
     CreateuserComponent,
     ProductComponent,
     FooterComponent,
+    WishlistComponent,
 
   ],
   imports: [

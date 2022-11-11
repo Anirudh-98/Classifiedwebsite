@@ -18,7 +18,10 @@ export class ProductviewComponent implements OnInit {
     productModel: "",
     location: "",
     productId: '',
-    productImages: []
+    productImages: [],
+    tag: "",
+    userName: "",
+    contactNumber: ""
   }
   constructor(private productService:ProductService, private activatedRoute:ActivatedRoute,
     private router:Router,private userAuth:UserAuthService) { }

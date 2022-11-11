@@ -1,6 +1,6 @@
 <nav class="navbar  navbar-expand-lg  navbar-dark bg-primary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Classfields</a>
+    <a *ngIf="isLoggedIn()" class="navbar-brand" href="#">Hey,{{userAuth.getUser()}}.</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -18,11 +18,15 @@
           >Admin Dashboard</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" routerLink="/user"
+          <a class="nav-link active " aria-current="page" routerLink="/user"
           *ngIf="userService.roleMatch(['User'])"
-          >User Dashboard</a>
+          >Dashboard</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link active " routerLink="/wishlist">Wishlist</a>
+        </li> -->
       </ul>
+
       <button *ngIf="! isLoggedIn()" type="button" class="btn btn-success" routerLink="/login">Login</button>
       <button *ngIf="isLoggedIn()" type="button" class="btn btn-danger" (click)="logout()">Logout</button>
     </div>

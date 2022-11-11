@@ -9,6 +9,7 @@ import { LoginComponent } from './login/login.component';
 import { ProductComponent } from './product/product.component';
 import { ProductviewComponent } from './productview/productview.component';
 import { UserComponent } from './user/user.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 import { AuthGuard } from './_auth/auth.guard';
 import { ProductViewService } from './_services/product-view.service';
 
@@ -30,7 +31,8 @@ const routes: Routes = [
   resolve: {
     product: ProductViewService
   }
-  }
+  },
+  {path: 'wishlist',component:WishlistComponent}
 
 ];
 
