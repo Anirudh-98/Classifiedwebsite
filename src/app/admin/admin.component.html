@@ -1,0 +1,37 @@
+<div class="container" style="margin-top: 80px ;">
+  <div class="div mb-3 d-flex justify-content-end">
+     <input  class="form-control text-center" type="text" name="search" autocomplete="off"
+     [(ngModel)]="searchText" placeholder="Search..." style="width: 250px;">
+  </div>
+  <div class="card p-5"  style="color: green ;">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Username</th>
+      <th scope="col">FirstName</th>
+      <th scope="col">No.of Products</th>
+      <th scope="col">View</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | filter:searchText">
+      <td>{{user.userName}}</td>
+      <td>{{user.userFirstName}}</td>
+      <td>{{user.userProduct.length}}</td>
+      <td>
+        <button mat-icon-button color="primary" data-bs-toggle="tooltip" data-bs-placement="top" title="View" >
+          <mat-icon>visibility</mat-icon>
+        </button>
+      </td>
+      <td>
+      <button mat-icon-button color="warn" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" >
+        <mat-icon>delete</mat-icon>
+      </button>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+  </div>
+  </div>
+

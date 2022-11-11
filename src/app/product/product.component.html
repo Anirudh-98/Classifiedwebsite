@@ -1,0 +1,85 @@
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-top: 80px ;">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+           <h1 class="text-center text-danger fw-bold brand">Great Deals!!</h1>
+         <div class="cards-wrapper">
+          <div class="card" *ngFor="let item of moreData" >
+            <div class="image-wrapper">
+            <img [src]="item.productImages[0].url" class="card-img-top" alt="..." >
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>{{item.productName}}</b></h5>
+            <p class="card-text"> Model:{{item.productModel}}</p>
+            <p class="card-text">Price: <span class=" text-danger"> Rs.{{item.productPrice}}</span></p>
+            <p class="card-text">Description:{{item.productDescription}}</p>
+            <p class="card-text">Location:{{item.location}}</p>
+            <button mat-icon-button color="primary" (click)="viewProduct(item.productId)">View more..</button>
+        </div>
+          </div>
+         </div>
+    </div>
+    <div class="carousel-item active">
+      <h1 class="text-center text-danger fw-bold brand">Great Deals!!</h1>
+    <div class="cards-wrapper">
+     <div class="card" *ngFor="let item of moreData" >
+       <div class="image-wrapper">
+       <img [src]="item.productImages[0].url" class="card-img-top" alt="..." >
+     </div>
+       <div class="card-body">
+         <h5 class="card-title"><b>{{item.productName}}</b></h5>
+         <p class="card-text"> Model:{{item.productModel}}</p>
+         <p class="card-text">Price: <span class=" text-danger"> Rs.{{item.productPrice}}</span></p>
+         <p class="card-text">Description:{{item.productDescription}}</p>
+         <p class="card-text">Location:{{item.location}}</p>
+         <button mat-icon-button color="primary" (click)="viewProduct(item.productId)">View more..</button>
+     </div>
+    </div>
+</div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!--Search Bar-->
+<div class="container mt-3">
+  <div>
+     <input id="search" class="form-control text-center mt-2 fixed-top" type="text" name="search" autocomplete="off" [(ngModel)]="searchText"
+    placeholder="Find Cars,Mobile Phones and more.." style="width: 368px;
+margin-left: auto; margin-right: auto;">
+  </div>
+<!--Search Bar End-->
+  <div class="cards-wrappers mt-3">
+    <div class="card mt-2" *ngFor="let item of moreData | filter:searchText" style="width: 16rem;display: inline-flex;" >
+      <div class="image-wrapper">
+      <img [src]="item.productImages[0].url" class="card-img-top" alt="..." >
+    </div>
+      <div class="card-body">
+        <h5 class="card-title"><b>{{item.productName}}</b></h5>
+        <p class="card-text"> Model:{{item.productModel}}</p>
+        <p class="card-text">Price:  Rs.{{item.productPrice}}</p>
+        <p class="card-text">Description:{{item.productDescription}}</p>
+        <p class="card-text">Location:{{item.location}}</p>
+        <button mat-icon-button color="primary" (click)="viewProduct(item.productId)">View more..</button>
+        <!-- <div style="text-align: end ;">
+          <button mat-icon-button color="primary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Edit" (click)="editProduct(item.productId)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete" (click)="deleteProduct(item.productId)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        </div> -->
+    </div>
+   </div>
+  </div>
+  <div class="text-center mt-3 mb-3">
+    <button mat-raised-button color="primary" class="" (click)="addMore()" style="justify-content:center ;">
+      View More
+    </button>
+</div>
+
+

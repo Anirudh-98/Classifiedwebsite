@@ -1,0 +1,49 @@
+<div class="container">
+  <div class=" mt-3 row d-flex justify-content-center">
+    <div class="card p-5  col-md-6">
+      <h1 class="text-center">Create Account</h1>
+      <hr>
+      <form #createForm="ngForm" (ngSubmit)="createAccount(createForm)">
+         <label>Username:</label>
+        <input type="text"
+        ngModel
+        name="userName"
+        id="userName"
+        placeholder="Enter your userName"
+        class="form-control mb-3"
+        >
+         <label>FirstName:</label>
+        <input type="text"
+        ngModel
+        name="userFirstName"
+        id="userFirstName"
+        placeholder="Enter your firstname"
+        class="form-control mb-3"
+        >
+         <label>LastName:</label>
+        <input type="text"
+        ngModel
+        name="userLastName"
+        id="userLastName"
+        placeholder="Enter your surname"
+        class="form-control mb-3"
+        >
+         <label>Password:</label>
+        <input type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        placeholder="Enter your password"
+        class="form-control mb-3"
+        >
+        <input type="submit"
+        value="CreateAccount"
+        class="btn btn-outline-primary form-control rounded-0 mb-2"
+        >
+        <div class="text-end " style="cursor: pointer ;">
+          <h3 routerLink="/login">Login</h3>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

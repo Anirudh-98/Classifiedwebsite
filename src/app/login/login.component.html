@@ -1,0 +1,32 @@
+<div class="container" style="margin-top: 80px ;">
+  <div class="row d-flex justify-content-center">
+  <div class="card col-md-6" style="padding: 20px ;">
+    <h2 class="text-center">Login Form</h2>
+      <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="label">Username:</div>
+        <input type="text"
+        ngModel
+        name="userName"
+        id="userName"
+        placeholder="Enter your username"
+        class="form-control mb-3"
+        >
+        <div class="label">Password:</div>
+        <input type="password"
+        ngModel
+        name="userPassword"
+        id="userPassword"
+        placeholder="Enter your password"
+        class="form-control mb-3"
+        >
+        <input type="submit"
+        value="Login"
+        class="btn btn-outline-primary form-control rounded-0"
+        >
+        <div class="text-end" style="cursor: pointer ;">
+          <h3 routerLink="/create">CreateAccount</h3>
+        </div>
+      </form>
+  </div>
+</div>
+</div>
